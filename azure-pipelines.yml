@@ -22,7 +22,6 @@ steps:
     arguments: 'configuration $(buildConfiguration)'
 
 #Publish all projects artifacts to Build.ArtifactStagingDirectory
-steps:
 - task: DotNetCoreCLI@2
   displayName: Publish
   inputs:
