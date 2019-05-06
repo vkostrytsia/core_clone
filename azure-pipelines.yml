@@ -34,4 +34,4 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: published_artifacts
+    artifactName: PublishedAartifacts
