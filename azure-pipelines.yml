@@ -28,8 +28,8 @@ steps:
     command: publish
     projects: '**/*.csproj'
     arguments: '--output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: true
     publishWebProjects: false
+    zipAfterPublish: true
 
 #Publish all projects artifacts to Azure Pipelines
 - task: PublishBuildArtifacts@1
