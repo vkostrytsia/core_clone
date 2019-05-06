@@ -20,6 +20,12 @@ steps:
     command: build
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
+  enabled: false
+
+# Build the projects using Powershell
+- powershell: |
+  .\psbuild.ps1 -Verbose
+  displayName: 'PowerShell Script to execute dotnet build'
 
 #Publish all projects artifacts to Build.ArtifactStagingDirectory
 - task: DotNetCoreCLI@2
