@@ -24,7 +24,7 @@ steps:
 
 # Build the projects using Powershell
 - powershell: |
-  .\psbuild.ps1 -Verbose
+    .\psbuild.ps1 -Verbose
   displayName: 'PowerShell Script to execute dotnet build'
 
 #Publish all projects artifacts to Build.ArtifactStagingDirectory
