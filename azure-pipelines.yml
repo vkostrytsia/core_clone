@@ -19,7 +19,7 @@ steps:
   inputs:
     command: build
     projects: '**/*.csproj'
-    arguments: 'configuration $(buildConfiguration)'
+    arguments: '--configuration $(buildConfiguration)'
 
 #Publish all projects artifacts to Build.ArtifactStagingDirectory
 - task: DotNetCoreCLI@2
@@ -28,7 +28,6 @@ steps:
     command: publish
     projects: '**/*.csproj'
     arguments: '--output $(Build.ArtifactStagingDirectory)'
-    publishWebProjects: false
     zipAfterPublish: true
 
 #Publish all projects artifacts to Azure Pipelines
