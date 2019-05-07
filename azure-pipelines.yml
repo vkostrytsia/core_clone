@@ -28,6 +28,13 @@ steps:
    $dotnet_path = "$env:ProgramFiles\dotnet\dotnet.exe"
    $project_files | ForEach-Object -Process { & $dotnet_path build $_.FullName '--configuration' $(buildConfiguration) }
   displayName: 'PowerShell Script to execute dotnet build'
+  enabled: false
+
+- task: PowerShell@1
+  displayName: 'PowerShell Script'
+  inputs:
+    scriptName: psbuild.ps1
+    arguments: '$(Build.SourcesDirectory) $(buildConfiguration)'
 
 #Publish all projects artifacts to Build.ArtifactStagingDirectory
 - task: DotNetCoreCLI@2
