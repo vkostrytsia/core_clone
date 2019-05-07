@@ -34,7 +34,7 @@ steps:
   displayName: 'PowerShell Script'
   inputs:
     scriptName: psbuild.ps1
-    arguments: '$(Build.SourcesDirectory) $(buildConfiguration)'
+    arguments: '$(Build.SourcesDirectory), $(buildConfiguration)'
 
 #Publish all projects artifacts to Build.ArtifactStagingDirectory
 - task: DotNetCoreCLI@2
