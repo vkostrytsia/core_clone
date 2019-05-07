@@ -1,4 +1,4 @@
-PARAM ($(Build.SourcesDirectory), $(buildConfiguration))
-$project_files = Get-ChildItem -Path "$(Build.SourcesDirectory)" -Include "*.csproj" -Recurse
+
+$project_files = Get-ChildItem -Path $args[0] -Include "*.csproj" -Recurse
 $dotnet_path = "$env:ProgramFiles\dotnet\dotnet.exe"
-$project_files | ForEach-Object -Process { & $dotnet_path build $_.FullName '--configuration' $(buildConfiguration) }
+$project_files | ForEach-Object -Process { & $dotnet_path build $_.FullName '--configuration' $args[1] }
